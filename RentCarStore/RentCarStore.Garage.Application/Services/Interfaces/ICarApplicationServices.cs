@@ -2,7 +2,7 @@
 
 namespace RentCarStore.Garage.Application.Services.Interfaces
 {
-    public interface ICarServices
+    public interface ICarApplicationServices
     {
         CarDto AddCar(CarDto car);
     }

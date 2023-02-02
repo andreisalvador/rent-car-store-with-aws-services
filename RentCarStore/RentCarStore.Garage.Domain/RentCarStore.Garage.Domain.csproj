@@ -10,8 +10,4 @@
     <ProjectReference Include="..\RentCarStore.Core\RentCarStore.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
-  </ItemGroup>
-
 </Project>
