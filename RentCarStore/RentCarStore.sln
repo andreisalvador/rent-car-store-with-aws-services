@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Applica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Api", "RentCarStore.Garage.Api\RentCarStore.Garage.Api.csproj", "{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Ioc", "RentCarStore.Garage.Ioc\RentCarStore.Garage.Ioc.csproj", "{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{61DE4AA4-7D6A-4B10-A921-08773A1080CC} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
 		{4DC19E06-54B4-41B8-80E5-107211200AA6} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
 		{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
+		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0997C5F4-2024-4DB4-A341-F18466DC6E8D}

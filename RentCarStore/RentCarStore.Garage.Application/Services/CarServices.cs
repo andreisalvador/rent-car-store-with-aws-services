@@ -1,6 +1,8 @@
-﻿using RentCarStore.Garage.Data.Repositories.Interfaces;
+﻿using Mapster;
+using RentCarStore.Garage.Application.Dtos;
+using RentCarStore.Garage.Application.Services.Interfaces;
+using RentCarStore.Garage.Data.Repositories.Interfaces;
 using RentCarStore.Garage.Domain;
-using RentCarStore.Garage.Domain.Services;
 
 namespace RentCarStore.Garage.Application.Services
 {
@@ -13,12 +15,14 @@ namespace RentCarStore.Garage.Application.Services
             _carRepository = carRepository;
         }
 
-        public Car AddCar(Car car)
+        public CarDto AddCar(CarDto carDto)
         {
+            Car car = carDto.Adapt<Car>();
+
             _carRepository.Add(car);
             _carRepository.SaveChangesAsync();
 
-            return car;
+            return carDto;
         }
     }
 }

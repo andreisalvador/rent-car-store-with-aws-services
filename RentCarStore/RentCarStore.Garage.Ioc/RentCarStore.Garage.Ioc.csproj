@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mapster" Version="7.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RentCarStore.Garage.Data\RentCarStore.Garage.Data.csproj" />
-    <ProjectReference Include="..\RentCarStore.Garage.Domain\RentCarStore.Garage.Domain.csproj" />
+    <ProjectReference Include="..\RentCarStore.Garage.Application\RentCarStore.Garage.Application.csproj" />
   </ItemGroup>
 
 </Project>
