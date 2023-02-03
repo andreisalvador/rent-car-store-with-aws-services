@@ -1,29 +1,53 @@
-﻿using Mapster;
+﻿using FluentValidation;
+using Mapster;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RentCarStore.Core.Notification;
+using RentCarStore.Core.Notification.Handlers;
+using RentCarStore.Core.Notification.Notifiers;
+using RentCarStore.Core.Notification.Notifiers.Interfaces;
 using RentCarStore.Garage.Application.Mappings;
 using RentCarStore.Garage.Application.Services;
+using RentCarStore.Garage.Application.Services.Interfaces;
 using RentCarStore.Garage.Data;
 using RentCarStore.Garage.Data.Repositories;
-using RentCarStore.Garage.Data.Repositories.Interfaces;
-using RentCarStore.Garage.Domain.Services;
+using RentCarStore.Garage.Domain;
+using RentCarStore.Garage.Domain.Repositories;
+using RentCarStore.Garage.Domain.Validators;
+using System.Reflection;
 
 namespace RentCarStore.Garage.Ioc
 {
     public static class Bootstraper
     {
-        public static void Resolve(IServiceCollection services, IConfiguration configuration)
+        public static void Resolve(IServiceCollection services, IConfiguration configuration, Assembly startupAssembly)
         {
             AddMapster();
             AddDbContext(services, configuration);
             AddRepositories(services);
+            AddNotification(services);
+            AddValidators(services);
             AddApplicationServices(services);
+
+            services.AddMediatR(startupAssembly);
+        }
+
+        private static void AddValidators(IServiceCollection services)
+        {
+            services.AddScoped<IValidator<Car>, CarValidator>();
+        }
+
+        private static void AddNotification(IServiceCollection services)
+        {
+            services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
+            services.AddScoped<INotifier, Notifier>();
         }
 
         private static void AddApplicationServices(IServiceCollection services)
         {
-            services.AddScoped<ICarServices, CarServices>();
+            services.AddScoped<ICarApplicationServices, CarApplicationServices>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)

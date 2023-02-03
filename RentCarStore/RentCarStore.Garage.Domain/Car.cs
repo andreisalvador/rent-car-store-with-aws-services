@@ -13,8 +13,10 @@ namespace RentCarStore.Garage.Domain
         public DateOnly BuildDate { get; }
         public uint CurrentMileage { get; private set; }
         public string Description { get; set; }
+        public string LicensePlate { get; private set; }
+        public string ChassisNumber { get; private set; }
 
-        public Car(string label, string color, string name, CarType type, DateOnly buildDate, uint currentMileage, string description)
+        public Car(string label, string color, string name, CarType type, DateOnly buildDate, uint currentMileage, string description, string licensePlate, string chassisNumber)
         {
             Label = label;
             Color = color;
@@ -23,6 +25,8 @@ namespace RentCarStore.Garage.Domain
             BuildDate = buildDate;
             CurrentMileage = currentMileage;
             Description = description;
+            LicensePlate = licensePlate;
+            ChassisNumber = chassisNumber;
         }
 
         public void AddAccessories(Accessories accessories)

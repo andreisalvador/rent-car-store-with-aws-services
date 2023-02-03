@@ -1,9 +1,9 @@
 ﻿using RentCarStore.Core.Data.Interfaces;
-using RentCarStore.Garage.Domain;
 
-namespace RentCarStore.Garage.Data.Repositories.Interfaces
+namespace RentCarStore.Garage.Domain.Repositories
 {
     public interface ICarRepository : IRepository<Car>
     {
+        Task<bool> ExistsCarWithLicensePlate(string licensePlate);
     }
 }

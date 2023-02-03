@@ -12,5 +12,7 @@ namespace RentCarStore.Garage.Application.Dtos
         public DateOnly BuildDate { get; init; }
         public uint CurrentMileage { get; init; }
         public string Description { get; init; }
+        public string LicensePlate { get; init; }
+        public string ChassisNumber { get; init; }
     }
 }

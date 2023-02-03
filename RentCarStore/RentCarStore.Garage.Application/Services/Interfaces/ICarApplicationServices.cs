@@ -4,6 +4,7 @@ namespace RentCarStore.Garage.Application.Services.Interfaces
 {
     public interface ICarApplicationServices
     {
-        CarDto AddCar(CarDto car);
+        Task<CarDto> AddCar(CarDto carDto);
+        Task<CarDto> UpdateCar(CarDto carDto);
     }
 }

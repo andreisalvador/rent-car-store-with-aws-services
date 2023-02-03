@@ -1,27 +1,31 @@
 ﻿using Mapster;
 using RentCarStore.Garage.Application.Dtos;
 using RentCarStore.Garage.Application.Services.Interfaces;
-using RentCarStore.Garage.Data.Repositories.Interfaces;
 using RentCarStore.Garage.Domain;
+using RentCarStore.Garage.Domain.Services.Interfaces;
 
 namespace RentCarStore.Garage.Application.Services
 {
-    public class CarServices : ICarServices
+    public class CarApplicationServices : ICarApplicationServices
     {
-        private readonly ICarRepository _carRepository;
+        private readonly ICarServices _domainServices;
 
-        public CarServices(ICarRepository carRepository)
+        public CarApplicationServices(ICarServices domainServices)
         {
-            _carRepository = carRepository;
+            _domainServices = domainServices;
         }
 
-        public CarDto AddCar(CarDto carDto)
+        public async Task<CarDto> AddCar(CarDto carDto)
+        {
+            Car newCar = carDto.Adapt<Car>();
+            await _domainServices.AddCar(newCar);
+            return carDto;
+        }
+
+        public async Task<CarDto> UpdateCar(CarDto carDto)
         {
             Car car = carDto.Adapt<Car>();
-
-            _carRepository.Add(car);
-            _carRepository.SaveChangesAsync();
-
+            await _domainServices.UpdateCar(car);
             return carDto;
         }
     }

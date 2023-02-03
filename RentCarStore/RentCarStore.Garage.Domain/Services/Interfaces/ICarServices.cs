@@ -1,9 +1,10 @@
-﻿using RentCarStore.Garage.Domain.Enums;
-
-namespace RentCarStore.Garage.Domain.Services.Interfaces
+﻿namespace RentCarStore.Garage.Domain.Services.Interfaces
 {
     public interface ICarServices
     {
-        void AddAccessories(Car car, Accessories accessories);
+        Task AddCar(Car car);
+        Task UpdateCar(Car car);
+        Task DeleteCar(Guid carId);
+        Task<Car> GetCarById(Guid carId);
     }
 }
