@@ -6,5 +6,6 @@ namespace RentCarStore.Garage.Application.Services.Interfaces
     {
         Task<CarDto> AddCar(CarDto carDto);
         Task<CarDto> UpdateCar(CarDto carDto);
+        Task DeleteCar(Guid carId);
     }
 }

@@ -1,4 +1,4 @@
-namespace RentCarStore.Garage.Api
+namespace RentCarStore.Customers.Api
 {
     public class WeatherForecast
     {

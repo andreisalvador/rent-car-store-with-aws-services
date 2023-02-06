@@ -13,15 +13,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F711B29C-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Core", "RentCarStore.Core\RentCarStore.Core.csproj", "{B2C7F959-A2C3-4180-B103-D2B7743875BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Domain", "RentCarStore.Garage.Domain\RentCarStore.Garage.Domain.csproj", "{FEB9A075-B27E-46D2-AC87-F61049E39BF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Domain", "RentCarStore.Garage.Domain\RentCarStore.Garage.Domain.csproj", "{FEB9A075-B27E-46D2-AC87-F61049E39BF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Data", "RentCarStore.Garage.Data\RentCarStore.Garage.Data.csproj", "{61DE4AA4-7D6A-4B10-A921-08773A1080CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Data", "RentCarStore.Garage.Data\RentCarStore.Garage.Data.csproj", "{61DE4AA4-7D6A-4B10-A921-08773A1080CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Application", "RentCarStore.Garage.Application\RentCarStore.Garage.Application.csproj", "{4DC19E06-54B4-41B8-80E5-107211200AA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Application", "RentCarStore.Garage.Application\RentCarStore.Garage.Application.csproj", "{4DC19E06-54B4-41B8-80E5-107211200AA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Api", "RentCarStore.Garage.Api\RentCarStore.Garage.Api.csproj", "{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Api", "RentCarStore.Garage.Api\RentCarStore.Garage.Api.csproj", "{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Garage.Ioc", "RentCarStore.Garage.Ioc\RentCarStore.Garage.Ioc.csproj", "{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Ioc", "RentCarStore.Garage.Ioc\RentCarStore.Garage.Ioc.csproj", "{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{269BCCBF-CE42-4772-BE8D-46DD27F5D21E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Domain", "RentCarStore.Customers.Domain\RentCarStore.Customers.Domain.csproj", "{5D88B243-CE1E-480A-8818-EB7554548B62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Data", "RentCarStore.Customers.Data\RentCarStore.Customers.Data.csproj", "{B1BB013F-204A-4167-8D13-3BCBFDBCC928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Ioc", "RentCarStore.Customers.Ioc\RentCarStore.Customers.Ioc.csproj", "{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Api", "RentCarStore.Customers.Api\RentCarStore.Customers.Api.csproj", "{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Domain", "RentCarStore.Contracts.Domain\RentCarStore.Contracts.Domain.csproj", "{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Ioc", "RentCarStore.Contracts.Ioc\RentCarStore.Contracts.Ioc.csproj", "{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Data", "RentCarStore.Contracts.Data\RentCarStore.Contracts.Data.csproj", "{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Api", "RentCarStore.Contracts.Api\RentCarStore.Contracts.Api.csproj", "{159F3891-8581-43D4-8245-AD09E829EE9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +71,38 @@ Global
 		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D88B243-CE1E-480A-8818-EB7554548B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D88B243-CE1E-480A-8818-EB7554548B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D88B243-CE1E-480A-8818-EB7554548B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D88B243-CE1E-480A-8818-EB7554548B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BB013F-204A-4167-8D13-3BCBFDBCC928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BB013F-204A-4167-8D13-3BCBFDBCC928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BB013F-204A-4167-8D13-3BCBFDBCC928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BB013F-204A-4167-8D13-3BCBFDBCC928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{159F3891-8581-43D4-8245-AD09E829EE9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{159F3891-8581-43D4-8245-AD09E829EE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{159F3891-8581-43D4-8245-AD09E829EE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{159F3891-8581-43D4-8245-AD09E829EE9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +114,14 @@ Global
 		{4DC19E06-54B4-41B8-80E5-107211200AA6} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
 		{C438D8FF-2D8F-40C3-9A1C-33C8AF0DEB79} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
 		{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F} = {9487E3E4-C4AC-4AF4-B008-74095385DC33}
+		{5D88B243-CE1E-480A-8818-EB7554548B62} = {449B1A78-B948-4D07-9C36-AD838B005657}
+		{B1BB013F-204A-4167-8D13-3BCBFDBCC928} = {449B1A78-B948-4D07-9C36-AD838B005657}
+		{3698C91E-E001-4DE6-9BE5-8084E34AC7FD} = {449B1A78-B948-4D07-9C36-AD838B005657}
+		{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3} = {449B1A78-B948-4D07-9C36-AD838B005657}
+		{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B} = {53CFDCD8-DD9F-4166-A48A-57BF44251F39}
+		{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8} = {53CFDCD8-DD9F-4166-A48A-57BF44251F39}
+		{703527A9-6848-4DD3-9DD7-06F1B85F4FB0} = {53CFDCD8-DD9F-4166-A48A-57BF44251F39}
+		{159F3891-8581-43D4-8245-AD09E829EE9F} = {53CFDCD8-DD9F-4166-A48A-57BF44251F39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0997C5F4-2024-4DB4-A341-F18466DC6E8D}

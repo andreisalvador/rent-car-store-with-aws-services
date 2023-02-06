@@ -28,5 +28,8 @@ namespace RentCarStore.Garage.Application.Services
             await _domainServices.UpdateCar(car);
             return carDto;
         }
+
+        public async Task DeleteCar(Guid carId)
+            => await _domainServices.DeleteCar(carId);
     }
 }
