@@ -9,6 +9,8 @@ namespace RentCarStore.Garage.Data.Mappings
         public void Configure(EntityTypeBuilder<Car> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.HasIndex(x => x.LicensePlate).IsUnique();
+            builder.HasIndex(x => x.ChassisNumber).IsUnique();
         }
     }
 }

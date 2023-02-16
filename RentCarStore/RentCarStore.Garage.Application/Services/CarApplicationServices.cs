@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using RentCarStore.Garage.Application.Dtos;
+using RentCarStore.Garage.Application.Dtos.Car;
 using RentCarStore.Garage.Application.Services.Interfaces;
 using RentCarStore.Garage.Domain;
 using RentCarStore.Garage.Domain.Services.Interfaces;
@@ -22,7 +23,7 @@ namespace RentCarStore.Garage.Application.Services
             return carDto;
         }
 
-        public async Task<CarDto> UpdateCar(CarDto carDto)
+        public async Task<CarDto> UpdateCar(UpdateCarDto carDto)
         {
             Car car = carDto.Adapt<Car>();
             await _domainServices.UpdateCar(car);
