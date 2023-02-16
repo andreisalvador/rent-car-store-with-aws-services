@@ -23,23 +23,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Api", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Garage.Ioc", "RentCarStore.Garage.Ioc\RentCarStore.Garage.Ioc.csproj", "{1A5F69AC-4FA8-4CCD-98B5-1334028EF93F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{269BCCBF-CE42-4772-BE8D-46DD27F5D21E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Finance", "Finance", "{269BCCBF-CE42-4772-BE8D-46DD27F5D21E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Domain", "RentCarStore.Customers.Domain\RentCarStore.Customers.Domain.csproj", "{5D88B243-CE1E-480A-8818-EB7554548B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Customers.Domain", "RentCarStore.Customers.Domain\RentCarStore.Customers.Domain.csproj", "{5D88B243-CE1E-480A-8818-EB7554548B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Data", "RentCarStore.Customers.Data\RentCarStore.Customers.Data.csproj", "{B1BB013F-204A-4167-8D13-3BCBFDBCC928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Customers.Data", "RentCarStore.Customers.Data\RentCarStore.Customers.Data.csproj", "{B1BB013F-204A-4167-8D13-3BCBFDBCC928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Ioc", "RentCarStore.Customers.Ioc\RentCarStore.Customers.Ioc.csproj", "{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Customers.Ioc", "RentCarStore.Customers.Ioc\RentCarStore.Customers.Ioc.csproj", "{3698C91E-E001-4DE6-9BE5-8084E34AC7FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Customers.Api", "RentCarStore.Customers.Api\RentCarStore.Customers.Api.csproj", "{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Customers.Api", "RentCarStore.Customers.Api\RentCarStore.Customers.Api.csproj", "{CF1A2BD9-6DEA-4CAC-B845-6B928AE771F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Domain", "RentCarStore.Contracts.Domain\RentCarStore.Contracts.Domain.csproj", "{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Domain", "RentCarStore.Contracts.Domain\RentCarStore.Contracts.Domain.csproj", "{11CAFB1E-E244-4C6A-AF61-6A327AA9AB9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Ioc", "RentCarStore.Contracts.Ioc\RentCarStore.Contracts.Ioc.csproj", "{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Ioc", "RentCarStore.Contracts.Ioc\RentCarStore.Contracts.Ioc.csproj", "{AC9590ED-F899-4A83-9CFD-0B2C815C1DD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Data", "RentCarStore.Contracts.Data\RentCarStore.Contracts.Data.csproj", "{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Data", "RentCarStore.Contracts.Data\RentCarStore.Contracts.Data.csproj", "{703527A9-6848-4DD3-9DD7-06F1B85F4FB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Api", "RentCarStore.Contracts.Api\RentCarStore.Contracts.Api.csproj", "{159F3891-8581-43D4-8245-AD09E829EE9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Api", "RentCarStore.Contracts.Api\RentCarStore.Contracts.Api.csproj", "{159F3891-8581-43D4-8245-AD09E829EE9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

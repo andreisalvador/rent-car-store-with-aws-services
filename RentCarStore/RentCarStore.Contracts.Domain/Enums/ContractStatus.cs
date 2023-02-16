@@ -2,8 +2,7 @@
 {
     public enum ContractStatus
     {
-        InProgress = 1,
-        PaymentPending,
+        PaymentPending = 1,
         Approved,
         Denied,
         Finished

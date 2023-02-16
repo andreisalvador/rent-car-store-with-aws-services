@@ -29,8 +29,18 @@ namespace RentCarStore.Contracts.Domain.Services
                 return;
             }
 
+            var isCarAvailable = await _contractRepository.IsCarAvailableInPeriod(contract.CarId, contract.WithdrawAt);
+
+            if(!isCarAvailable)
+            {
+                await _domainNotifier.Notify(new DomainNotification("add-contract", "The car is not available in the period."));
+                return;
+            }
+
             _contractRepository.Add(contract);
             await _contractRepository.SaveChangesAsync();
+
+            // throw event contract created.
         }
     }
 }
