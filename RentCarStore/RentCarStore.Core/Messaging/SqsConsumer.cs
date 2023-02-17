@@ -26,7 +26,8 @@ namespace RentCarStore.Core.Messaging
                 ReceiveMessageRequest request = new()
                 {
                     QueueUrl = queueUrlResponse.QueueUrl,
-                    MessageAttributeNames = new List<string> { "All" }
+                    MessageAttributeNames = new List<string> { "All" },
+                    MaxNumberOfMessages = 5
                 };
 
                 var receiveMessageResponse = await _sqs.ReceiveMessageAsync(request);

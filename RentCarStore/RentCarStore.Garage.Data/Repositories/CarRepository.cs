@@ -7,7 +7,7 @@ namespace RentCarStore.Garage.Data.Repositories
 {
     public class CarRepository : Repository<Car>, ICarRepository
     {
-        public CarRepository(DbContext context) : base(context)
+        public CarRepository(GarageContext context) : base(context)
         {
         }
 

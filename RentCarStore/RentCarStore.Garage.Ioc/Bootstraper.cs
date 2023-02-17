@@ -1,9 +1,12 @@
 ﻿using FluentValidation;
+using LocalStack.Client.Extensions;
 using Mapster;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RentCarStore.Core.LocalStack;
+using RentCarStore.Core.Messaging.Extensions;
 using RentCarStore.Core.Notification;
 using RentCarStore.Core.Notification.Handlers;
 using RentCarStore.Core.Notification.Notifiers;
@@ -15,6 +18,8 @@ using RentCarStore.Garage.Data;
 using RentCarStore.Garage.Data.Repositories;
 using RentCarStore.Garage.Domain;
 using RentCarStore.Garage.Domain.Repositories;
+using RentCarStore.Garage.Domain.Services;
+using RentCarStore.Garage.Domain.Services.Interfaces;
 using RentCarStore.Garage.Domain.Validators;
 using System.Reflection;
 
@@ -30,8 +35,16 @@ namespace RentCarStore.Garage.Ioc
             AddNotification(services);
             AddValidators(services);
             AddApplicationServices(services);
+            AddDomainServices(services);
+            services.AddMessaging();
+            services.AddLocalStackAwsService(configuration);
 
             services.AddMediatR(startupAssembly);
+        }
+
+        private static void AddDomainServices(IServiceCollection services)
+        {
+            services.AddScoped<ICarServices, CarServices>();
         }
 
         private static void AddValidators(IServiceCollection services)

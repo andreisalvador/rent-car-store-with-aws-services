@@ -16,6 +16,11 @@ namespace RentCarStore.Garage.Domain
         public string LicensePlate { get; private set; }
         public string ChassisNumber { get; private set; }
 
+        public Car()
+        {
+
+        }
+
         public Car(string label, string color, string name, CarType type, DateOnly buildDate, uint currentMileage, string description, string licensePlate, string chassisNumber)
         {
             Label = label;
