@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace RentCarStore.Contracts.Api.Controllers
+namespace RentCarStore.Finance.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

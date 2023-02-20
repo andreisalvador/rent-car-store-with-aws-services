@@ -13,7 +13,7 @@ namespace RentCarStore.Core.Messaging
 
         public SnsPublisher(IAmazonSimpleNotificationService sns) => _sns = sns;
 
-        public Task<PublishResponse> PublishAsync<TMessage>(string topicArn, TMessage message, Dictionary<string, MessageAttributeValue> messageAttributes = null!) where TMessage : class
+        public Task<PublishResponse> PublishAsync<TMessage>(string topicArn, TMessage message, Dictionary<string, MessageAttributeValue> messageAttributes = null!, CancellationToken cancellationToken = default!) where TMessage : class
         {
             string messageBody = JsonSerializer.Serialize(message);
 
@@ -29,7 +29,7 @@ namespace RentCarStore.Core.Messaging
                 foreach (var item in messageAttributes)
                     request.MessageAttributes.Add(item);
 
-            return _sns.PublishAsync(topicArn, messageBody);
+            return _sns.PublishAsync(topicArn, messageBody, cancellationToken);
         }
     }
 }

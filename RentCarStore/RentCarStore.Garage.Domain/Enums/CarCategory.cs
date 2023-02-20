@@ -1,6 +1,6 @@
 ﻿namespace RentCarStore.Garage.Domain.Enums
 {
-    public enum CarType
+    public enum CarCategory
     { 
         Suv = 1,
         Hatch,

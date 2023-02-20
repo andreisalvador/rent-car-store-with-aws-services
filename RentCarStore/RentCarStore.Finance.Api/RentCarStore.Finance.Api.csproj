@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>6ad93aa9-6c7f-45fb-bec2-75e3d284d9a2</UserSecretsId>
+    <UserSecretsId>e062f3cd-e083-4462-81d2-444f5ff94ef2</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RentCarStore.Contracts.Application\RentCarStore.Contracts.Application.csproj" />
-    <ProjectReference Include="..\RentCarStore.Contracts.Ioc\RentCarStore.Contracts.Ioc.csproj" />
+    <ProjectReference Include="..\RentCarStore.Core\RentCarStore.Core.csproj" />
+    <ProjectReference Include="..\RentCarStore.Finance.Domain\RentCarStore.Finance.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,10 @@
 ﻿using FluentValidation;
+using RentCarStore.Core.Messaging.Interfaces;
 using RentCarStore.Core.Notification;
 using RentCarStore.Core.Notification.Notifiers.Interfaces;
+using RentCarStore.Garage.Domain.Constants.Messaging;
 using RentCarStore.Garage.Domain.Enums;
+using RentCarStore.Garage.Domain.Messaging.Messages;
 using RentCarStore.Garage.Domain.Repositories;
 using RentCarStore.Garage.Domain.Services.Interfaces;
 
@@ -12,11 +15,13 @@ namespace RentCarStore.Garage.Domain.Services
         private readonly ICarRepository _repository;
         private readonly INotifier _domainNotifier;
         private readonly IValidator<Car> _carValidator;
-        public CarServices(ICarRepository repository, INotifier domainNotifier, IValidator<Car> carValidator)
+        private readonly ISnsPublisher _sns;
+        public CarServices(ICarRepository repository, INotifier domainNotifier, IValidator<Car> carValidator, ISnsPublisher sns)
         {
             _repository = repository;
             _domainNotifier = domainNotifier;
             _carValidator = carValidator;
+            _sns = sns;
         }
 
 
@@ -46,6 +51,14 @@ namespace RentCarStore.Garage.Domain.Services
 
             _repository.Add(car);
             await _repository.SaveChangesAsync();
+
+            await _sns.PublishAsync("arn:aws:sns:us-east-1:000000000000:garage", new CarCreatedEvent
+            {
+                Id = car.Id,
+                Category = car.Category,
+                CurrentMileage = car.CurrentMileage,
+                Accessories = car.Accessories
+            });
         }
 
         public async Task DeleteCar(Guid carId)

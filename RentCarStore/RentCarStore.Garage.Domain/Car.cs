@@ -8,7 +8,7 @@ namespace RentCarStore.Garage.Domain
         public string Label { get; set; }
         public string Color { get; set; }
         public string Name { get; set; }
-        public CarType Type { get; private set; }
+        public CarCategory Category { get; private set; }
         public Accessories Accessories { get; private set; }
         public DateOnly BuildDate { get; }
         public uint CurrentMileage { get; private set; }
@@ -21,12 +21,12 @@ namespace RentCarStore.Garage.Domain
 
         }
 
-        public Car(string label, string color, string name, CarType type, DateOnly buildDate, uint currentMileage, string description, string licensePlate, string chassisNumber)
+        public Car(string label, string color, string name, CarCategory type, DateOnly buildDate, uint currentMileage, string description, string licensePlate, string chassisNumber)
         {
             Label = label;
             Color = color;
             Name = name;
-            Type = type;
+            Category = type;
             BuildDate = buildDate;
             CurrentMileage = currentMileage;
             Description = description;

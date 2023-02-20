@@ -17,7 +17,7 @@ namespace RentCarStore.Core.Messaging
             _logger = logger;
         }
 
-        public async Task<List<Message>> GetMessagesAsync(string queueName)
+        public async Task<List<Message>> GetMessagesAsync(string queueName, CancellationToken cancellationToken = default!)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace RentCarStore.Core.Messaging
                     MaxNumberOfMessages = 5
                 };
 
-                var receiveMessageResponse = await _sqs.ReceiveMessageAsync(request);
+                var receiveMessageResponse = await _sqs.ReceiveMessageAsync(request, cancellationToken);
 
                 if (receiveMessageResponse.HttpStatusCode != HttpStatusCode.OK)
                 {
@@ -47,13 +47,13 @@ namespace RentCarStore.Core.Messaging
         }
 
 
-        public async Task DeleteMessageAsync(string queueName, string receiptHandle)
+        public async Task DeleteMessageAsync(string queueName, string receiptHandle, CancellationToken cancellationToken = default!)
         {
             var queueUrlResponse = await GetQueueUrl(queueName);
 
             try
             {
-                var response = await _sqs.DeleteMessageAsync(queueUrlResponse.QueueUrl, receiptHandle);
+                var response = await _sqs.DeleteMessageAsync(queueUrlResponse.QueueUrl, receiptHandle, cancellationToken);
 
                 if (response.HttpStatusCode != HttpStatusCode.OK)
                 {

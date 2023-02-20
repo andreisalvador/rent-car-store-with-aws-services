@@ -35,7 +35,7 @@ namespace RentCarStore.Garage.Domain.Validators
             RuleFor(c => c.CurrentMileage)
                .GreaterThanOrEqualTo(uint.MinValue);
 
-            RuleFor(c => c.Type)
+            RuleFor(c => c.Category)
                 .IsInEnum();
 
             RuleFor(c => c.BuildDate)

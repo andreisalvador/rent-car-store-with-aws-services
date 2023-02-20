@@ -11,8 +11,8 @@ namespace RentCarStore.Contracts.Domain
         public Guid CarId { get; set; }
         public DateTime WithdrawAt { get; set; }
         public DateTime ReturnAt { get; set; }
-        public ContractStatus Status { get; private set; }
         public Guid CustomerId { get; set; }
+        public ContractStatus Status { get; private set; }
         public Contract(Guid carId, Guid customerId, DateTime withdrawAt, DateTime returnAt)
         {
             Code = CodeGenerator.RandomString(MAX_CONTRACT_CODE_LENGTH);

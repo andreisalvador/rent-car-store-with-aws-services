@@ -7,6 +7,7 @@ using RentCarStore.Contracts.Data.Repositories;
 using RentCarStore.Contracts.Domain;
 using RentCarStore.Contracts.Domain.Repositories;
 using RentCarStore.Contracts.Domain.Validators;
+using RentCarStore.Core.LocalStack;
 
 namespace RentCarStore.Contracts.Ioc
 {
@@ -17,6 +18,7 @@ namespace RentCarStore.Contracts.Ioc
             AddValidators(services);
             AddDbContext(services, configuration);
             AddRepositories(services);
+            services.AddLocalStackAwsService(configuration);
         }
 
         private static void AddValidators(IServiceCollection services)
