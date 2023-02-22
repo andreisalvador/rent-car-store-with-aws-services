@@ -16,5 +16,8 @@ namespace RentCarStore.Core.Notification
             Key = key;
             Value = value;
         }
+
+        public static DomainNotification Create(string key, string value)
+            => new DomainNotification(key, value);
     }
 }

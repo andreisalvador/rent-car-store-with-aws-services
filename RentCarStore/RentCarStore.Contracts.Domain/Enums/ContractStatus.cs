@@ -5,6 +5,7 @@
         PaymentPending = 1,
         Approved,
         Denied,
-        Finished
+        Finished,
+        Cancel
     }
 }

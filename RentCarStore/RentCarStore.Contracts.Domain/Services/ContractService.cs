@@ -55,5 +55,20 @@ namespace RentCarStore.Contracts.Domain.Services
                 WithdrawAt = contract.WithdrawAt
             });
         }
+
+
+        public async Task CancelContract(Guid contractId)
+        {
+            Contract contract = await _contractRepository.GetByIdAsync(contractId);
+
+            if (contract is null)
+            {
+                await _domainNotifier.Notify(DomainNotification.Create("cancel-contract", "Unable to cancel contract because it wasn't found into database."));
+                return;
+            }
+
+            contract.Cancel();
+            await _contractRepository.SaveChangesAsync();
+        }
     }
 }

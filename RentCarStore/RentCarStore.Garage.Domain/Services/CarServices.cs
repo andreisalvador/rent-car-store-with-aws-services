@@ -27,7 +27,7 @@ namespace RentCarStore.Garage.Domain.Services
 
         public void AddAccessories(Car car, Accessories accessories)
         {
-            if(Enum.IsDefined(accessories) && car is not null)
+            if (Enum.IsDefined(accessories) && car is not null)
                 car.AddAccessories(accessories);
         }
 
@@ -37,7 +37,7 @@ namespace RentCarStore.Garage.Domain.Services
 
             if (!validationResult.IsValid)
             {
-                await _domainNotifier.Notify(new DomainNotification("add-car", validationResult.ToString()));
+                await _domainNotifier.Notify(DomainNotification.Create("add-car", validationResult.ToString()));
                 return;
             }
 
@@ -45,7 +45,7 @@ namespace RentCarStore.Garage.Domain.Services
 
             if (licensePlateExists)
             {
-                await _domainNotifier.Notify(new DomainNotification("add-car", "The license plate are exists."));
+                await _domainNotifier.Notify(DomainNotification.Create("add-car", "The license plate are exists."));
                 return;
             }
 
@@ -61,18 +61,20 @@ namespace RentCarStore.Garage.Domain.Services
             });
         }
 
-        public async Task DeleteCar(Guid carId)
+        public async Task Inactivate(Guid carId)
         {
             var car = await GetCarById(carId);
 
-            if(car is null)
+            if (car is null)
             {
-                await _domainNotifier.Notify(new DomainNotification("delete-car", $"The car with id '{carId}' doesn't exists."));
+                await _domainNotifier.Notify(DomainNotification.Create("inactivate-car", $"The car with id '{carId}' doesn't exists."));
                 return;
             }
 
-            _repository.Delete(car);
+            car.Inactivate();
             await _repository.SaveChangesAsync();
+
+            await _sns.PublishAsync("arn:aws:sns:us-east-1:000000000000:garage", new CarInactivatedEvent { Id = car.Id });
         }
 
         public Task<Car> GetCarById(Guid carId)

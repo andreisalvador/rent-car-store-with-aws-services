@@ -4,7 +4,7 @@
     {
         Task AddCar(Car car);
         Task UpdateCar(Car car);
-        Task DeleteCar(Guid carId);
+        Task Inactivate(Guid carId);
         Task<Car> GetCarById(Guid carId);
     }
 }

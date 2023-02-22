@@ -31,6 +31,6 @@ namespace RentCarStore.Garage.Application.Services
         }
 
         public async Task DeleteCar(Guid carId)
-            => await _domainServices.DeleteCar(carId);
+            => await _domainServices.Inactivate(carId);
     }
 }

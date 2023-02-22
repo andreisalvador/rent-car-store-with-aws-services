@@ -23,6 +23,9 @@ namespace RentCarStore.Contracts.Domain
             Status = ContractStatus.PaymentPending;
         }
 
+        public void Cancel()
+            => Status = ContractStatus.Cancel;
+
         public void Approve()
             => Status = ContractStatus.Approved;
 
