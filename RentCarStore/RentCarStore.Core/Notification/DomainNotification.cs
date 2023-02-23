@@ -18,6 +18,6 @@ namespace RentCarStore.Core.Notification
         }
 
         public static DomainNotification Create(string key, string value)
-            => new DomainNotification(key, value);
+            => new(key, value);
     }
 }
