@@ -2,7 +2,7 @@
 
 namespace RentCarStore.Garage.Domain.Messaging.Messages
 {
-    public class CarInactivatedEvent : IMessage
+    internal record CarInactivatedEvent : IMessage
     {
         public Guid Id { get; set; }
     }
