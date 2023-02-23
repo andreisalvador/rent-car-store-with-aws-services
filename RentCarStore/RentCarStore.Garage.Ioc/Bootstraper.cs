@@ -39,7 +39,7 @@ namespace RentCarStore.Garage.Ioc
             services.AddMessaging();
             services.AddLocalStackAwsService(configuration);
 
-            services.AddMediatR(startupAssembly);
+            services.AddMediatR(startupAssembly);            
         }
 
         private static void AddDomainServices(IServiceCollection services)
