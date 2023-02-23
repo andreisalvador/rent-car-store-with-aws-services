@@ -35,9 +35,9 @@ namespace RentCarStore.Finance.Domain.Services
 
             var car = await _carRepository.GetByIdAsync(invoice.CardId);
 
-            if(car is null)
+            if(car is null || !car.IsActive)
             {
-                await _domainNotifier.Notify(DomainNotification.Create("add-invoice", "Unable to create invoice because the car wasn't found."));
+                await _domainNotifier.Notify(DomainNotification.Create("add-invoice", "Unable to create invoice because the car wasn't found or it's inactive."));
                 return;
             }
 

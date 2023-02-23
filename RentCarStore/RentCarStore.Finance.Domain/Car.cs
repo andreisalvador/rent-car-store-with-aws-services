@@ -6,5 +6,6 @@ namespace RentCarStore.Finance.Domain
     public class Car : Entity
     {
         public CarCategory Category { get; set; }
+        public bool IsActive { get; set; }
     }
 }
