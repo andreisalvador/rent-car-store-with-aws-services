@@ -15,7 +15,6 @@ $TopicsAndQueues = New-Object System.Collections.Generic.Dictionary"[String,Stri
 $TopicsAndQueues.Add($TopicGarageName, $QueueGarageNames)
 $TopicsAndQueues.Add($TopicContractsName, $QueueContractsNames)
 
-
 Function CreateTopics
 {
     foreach($TopicName in $TopicNames)
@@ -37,8 +36,8 @@ Function SubscribeTopic
 {
     param([String]$TopicName, [String]$QueueName)
     $TopicArn=("{0}{1}" -f $TopicArnBase, $TopicName)
-    $QueueEndpoint=("{0}{1}" -f $QueueArnBase, $QueueName)
-    awslocal sns subscribe --topic-arn $TopicArn --protocol sqs --notification-endpoint=$QueueEndpoint
+    $QueueArn=("{0}{1}" -f $QueueArnBase, $QueueName)
+    awslocal sns subscribe --topic-arn $TopicArn --protocol sqs --notification-endpoint=$QueueArn
 }
 
 Function SubscribeQueuesToTopic
