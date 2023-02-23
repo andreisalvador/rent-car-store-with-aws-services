@@ -52,7 +52,7 @@ namespace RentCarStore.Garage.Domain.Services
             _repository.Add(car);
             await _repository.SaveChangesAsync();
 
-            await _sns.PublishAsync("arn:aws:sns:us-east-1:000000000000:garage", new CarCreatedEvent
+            await _sns.PublishAsync(RouterKeys.GARAGE_TOPIC, new CarCreatedEvent
             {
                 Id = car.Id,
                 Category = car.Category,
@@ -74,7 +74,7 @@ namespace RentCarStore.Garage.Domain.Services
             car.Inactivate();
             await _repository.SaveChangesAsync();
 
-            await _sns.PublishAsync("arn:aws:sns:us-east-1:000000000000:garage", new CarInactivatedEvent { Id = car.Id });
+            await _sns.PublishAsync(RouterKeys.GARAGE_TOPIC, new CarInactivatedEvent { Id = car.Id });
         }
 
         public Task<Car> GetCarById(Guid carId)

@@ -13,9 +13,15 @@ namespace RentCarStore.Core.Messaging
 
         public SnsPublisher(IAmazonSimpleNotificationService sns) => _sns = sns;
 
-        public Task<PublishResponse> PublishAsync<TMessage>(string topicArn, TMessage message, Dictionary<string, MessageAttributeValue> messageAttributes = null!, CancellationToken cancellationToken = default!) where TMessage : class
+        public Task<PublishResponse> PublishAsync<TMessage>(string topicName, TMessage message, Dictionary<string, MessageAttributeValue> messageAttributes = null!, CancellationToken cancellationToken = default!) where TMessage : class
         {
             string messageBody = JsonSerializer.Serialize(message);
+
+            string topicArnBase = Environment.GetEnvironmentVariable("TOPIC_ARN_BASE");
+
+            if (topicArnBase is null) throw new InvalidOperationException("The environment variable 'TOPIC_ARN_BASE' must be set.");
+
+            string topicArn = string.Concat(topicArnBase, topicName);
 
             PublishRequest request = new()
             {
