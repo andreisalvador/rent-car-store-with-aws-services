@@ -10,6 +10,7 @@ namespace RentCarStore.Core.Messaging
     {
         private readonly IAmazonSQS _sqs;
         private readonly ILogger<SqsConsumer> _logger;
+        private static readonly List<string> _attributeNames = new() { "All" };
 
         public SqsConsumer(IAmazonSQS sqs, ILogger<SqsConsumer> logger)
         {
@@ -26,7 +27,7 @@ namespace RentCarStore.Core.Messaging
                 ReceiveMessageRequest request = new()
                 {
                     QueueUrl = queueUrlResponse.QueueUrl,
-                    MessageAttributeNames = new List<string> { "All" },
+                    MessageAttributeNames = _attributeNames,
                     MaxNumberOfMessages = 5
                 };
 

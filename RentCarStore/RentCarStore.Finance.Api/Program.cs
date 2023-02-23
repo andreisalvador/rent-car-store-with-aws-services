@@ -1,3 +1,4 @@
+using RentCarStore.Finance.Api.BackgroundServices;
 using RentCarStore.Finance.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHostedService<GarageConsumerService>();
+builder.Services.AddHostedService<ContractConsumerService>();
 
 Bootstraper.Resolve(builder.Services, builder.Configuration, typeof(Program).Assembly);
 
