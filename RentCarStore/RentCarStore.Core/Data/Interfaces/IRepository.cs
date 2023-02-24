@@ -1,4 +1,5 @@
 ﻿using RentCarStore.Core.Entites;
+using System.Linq.Expressions;
 
 namespace RentCarStore.Core.Data.Interfaces
 {
@@ -7,6 +8,7 @@ namespace RentCarStore.Core.Data.Interfaces
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
+        Task<bool> Exists(Expression<Func<TEntity, bool>> condition);
         Task<TEntity> GetByIdAsync(Guid id);
         Task SaveChangesAsync();
     }

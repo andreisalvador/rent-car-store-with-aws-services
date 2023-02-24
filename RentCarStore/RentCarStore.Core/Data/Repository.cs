@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RentCarStore.Core.Data.Interfaces;
 using RentCarStore.Core.Entites;
+using System.Linq.Expressions;
 
 namespace RentCarStore.Core.Data
 {
@@ -13,6 +14,9 @@ namespace RentCarStore.Core.Data
             _context = context;
             DbSet = _context.Set<TEntity>();
         }
+
+        public Task<bool> Exists(Expression<Func<TEntity, bool>> condition)
+            => DbSet.AnyAsync(condition);
 
         public void Add(TEntity entity)
             => DbSet.Add(entity);

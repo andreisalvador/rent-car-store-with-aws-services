@@ -1,6 +1,7 @@
 ﻿using Amazon.Runtime.Internal.Transform;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
+using CommunityToolkit.HighPerformance.Buffers;
 using RentCarStore.Core.Messaging.Helper;
 using RentCarStore.Core.Messaging.Interfaces;
 using System.Text.Json;
@@ -17,11 +18,11 @@ namespace RentCarStore.Core.Messaging
         {
             string messageBody = JsonSerializer.Serialize(message);
 
-            string topicArnBase = Environment.GetEnvironmentVariable("TOPIC_ARN_BASE");
+            string? topicArnBase = Environment.GetEnvironmentVariable("TOPIC_ARN_BASE");
 
             if (topicArnBase is null) throw new InvalidOperationException("The environment variable 'TOPIC_ARN_BASE' must be set.");
 
-            string topicArn = string.Concat(topicArnBase, topicName);
+            string topicArn = StringPool.Shared.GetOrAdd(string.Concat(topicArnBase, topicName));
 
             PublishRequest request = new()
             {
