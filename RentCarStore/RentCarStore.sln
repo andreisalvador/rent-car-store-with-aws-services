@@ -41,15 +41,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Api", "RentCarStore.Contracts.Api\RentCarStore.Contracts.Api.csproj", "{159F3891-8581-43D4-8245-AD09E829EE9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Contracts.Application", "RentCarStore.Contracts.Application\RentCarStore.Contracts.Application.csproj", "{566EF380-B6E1-4A32-BBAB-67FEF8B848FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Contracts.Application", "RentCarStore.Contracts.Application\RentCarStore.Contracts.Application.csproj", "{566EF380-B6E1-4A32-BBAB-67FEF8B848FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Finance.Domain", "RentCarStore.Finance.Domain\RentCarStore.Finance.Domain.csproj", "{3539191C-D57F-4CE6-9541-134BA75B3A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Finance.Domain", "RentCarStore.Finance.Domain\RentCarStore.Finance.Domain.csproj", "{3539191C-D57F-4CE6-9541-134BA75B3A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Finance.Data", "RentCarStore.Finance.Data\RentCarStore.Finance.Data.csproj", "{E732E13D-66D3-4833-A9F4-2E50126605FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Finance.Data", "RentCarStore.Finance.Data\RentCarStore.Finance.Data.csproj", "{E732E13D-66D3-4833-A9F4-2E50126605FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Finance.Api", "RentCarStore.Finance.Api\RentCarStore.Finance.Api.csproj", "{E2B19B45-A196-490A-A376-AB0E102B133B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Finance.Api", "RentCarStore.Finance.Api\RentCarStore.Finance.Api.csproj", "{E2B19B45-A196-490A-A376-AB0E102B133B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Finance.Ioc", "RentCarStore.Finance.Ioc\RentCarStore.Finance.Ioc.csproj", "{FED07A8A-A9AE-4E4A-90E6-18D3E3AB243D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentCarStore.Finance.Ioc", "RentCarStore.Finance.Ioc\RentCarStore.Finance.Ioc.csproj", "{FED07A8A-A9AE-4E4A-90E6-18D3E3AB243D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarStore.Finance.Application", "RentCarStore.Finance.Application\RentCarStore.Finance.Application.csproj", "{1DF165C3-C536-44A7-9633-68CDCB216BA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,10 @@ Global
 		{FED07A8A-A9AE-4E4A-90E6-18D3E3AB243D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FED07A8A-A9AE-4E4A-90E6-18D3E3AB243D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FED07A8A-A9AE-4E4A-90E6-18D3E3AB243D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF165C3-C536-44A7-9633-68CDCB216BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF165C3-C536-44A7-9633-68CDCB216BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF165C3-C536-44A7-9633-68CDCB216BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF165C3-C536-44A7-9633-68CDCB216BA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -157,6 +163,7 @@ Global
 		{E732E13D-66D3-4833-A9F4-2E50126605FC} = {269BCCBF-CE42-4772-BE8D-46DD27F5D21E}
 		{E2B19B45-A196-490A-A376-AB0E102B133B} = {269BCCBF-CE42-4772-BE8D-46DD27F5D21E}
 		{FED07A8A-A9AE-4E4A-90E6-18D3E3AB243D} = {269BCCBF-CE42-4772-BE8D-46DD27F5D21E}
+		{1DF165C3-C536-44A7-9633-68CDCB216BA0} = {269BCCBF-CE42-4772-BE8D-46DD27F5D21E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0997C5F4-2024-4DB4-A341-F18466DC6E8D}

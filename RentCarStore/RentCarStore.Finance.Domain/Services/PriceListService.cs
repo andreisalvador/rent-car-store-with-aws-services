@@ -38,5 +38,37 @@ namespace RentCarStore.Finance.Domain.Services
             _repository.Add(priceList);
             await _repository.SaveChangesAsync();
         }
+
+        public async Task Inactivate(Guid priceListId)
+        {
+            PriceList priceListToBeInactivated = await _repository.GetByIdAsync(priceListId);
+
+            if(priceListToBeInactivated is null)
+            {
+                await _domainNotifier.Notify(DomainNotification.Create("price-list-inactivate", "Price list not found into database."));
+                return;
+            }
+
+            priceListToBeInactivated.Inactivate();
+
+            _repository.Update(priceListToBeInactivated);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task Activate(Guid priceListId)
+        {
+            PriceList priceListToBeInactivated = await _repository.GetByIdAsync(priceListId);
+
+            if (priceListToBeInactivated is null)
+            {
+                await _domainNotifier.Notify(DomainNotification.Create("price-list-activate", "Price list not found into database."));
+                return;
+            }
+
+            priceListToBeInactivated.Activate();
+
+            _repository.Update(priceListToBeInactivated);
+            await _repository.SaveChangesAsync();
+        }
     }
 }

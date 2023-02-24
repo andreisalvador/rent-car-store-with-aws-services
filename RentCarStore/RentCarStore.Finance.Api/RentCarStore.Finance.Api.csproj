@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RentCarStore.Core\RentCarStore.Core.csproj" />
+    <ProjectReference Include="..\RentCarStore.Finance.Application\RentCarStore.Finance.Application.csproj" />
     <ProjectReference Include="..\RentCarStore.Finance.Domain\RentCarStore.Finance.Domain.csproj" />
     <ProjectReference Include="..\RentCarStore.Finance.Ioc\RentCarStore.Finance.Ioc.csproj" />
   </ItemGroup>

@@ -23,7 +23,7 @@ namespace RentCarStore.Finance.Domain.Services
             _invoiceValidator = invoiceValidator;
         }
 
-        public async Task Add(Invoice invoice)
+        public async Task Create(Invoice invoice)
         {
             var validationResult = await _invoiceValidator.ValidateAsync(invoice);
 

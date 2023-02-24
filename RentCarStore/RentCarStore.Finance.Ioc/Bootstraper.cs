@@ -17,6 +17,8 @@ using RentCarStore.Finance.Domain.Services;
 using RentCarStore.Finance.Domain.Services.Interfaces;
 using RentCarStore.Finance.Domain.Validators;
 using System.Reflection;
+using RentCarStore.Finance.Application.Services.Interfaces;
+using RentCarStore.Finance.Application.Services;
 
 namespace RentCarStore.Finance.Ioc
 {
@@ -29,10 +31,17 @@ namespace RentCarStore.Finance.Ioc
             AddDomainServices(services);
             AddValidators(services);
             AddNotification(services);
+            AddApplicationServices(services);
 
             services.AddMessaging();
             services.AddLocalStackAwsService(configuration);
             services.AddMediatR(startupAssembly);
+        }
+
+        private static void AddApplicationServices(IServiceCollection services)
+        {
+            services.AddScoped<IPriceListApplicationService, PriceListApplicationService>();
+            services.AddScoped<IInvoiceApplicationService, InvoiceApplicationService>();
         }
 
         private static void AddNotification(IServiceCollection services)
@@ -51,6 +60,7 @@ namespace RentCarStore.Finance.Ioc
         private static void AddDomainServices(IServiceCollection services)
         {
             services.AddScoped<IInvoiceService, InvoiceService>();
+            services.AddScoped<IPriceListService, PriceListService>();  
         }
 
         private static void AddRepositories(IServiceCollection services)

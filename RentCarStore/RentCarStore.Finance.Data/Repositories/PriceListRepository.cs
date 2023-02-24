@@ -13,6 +13,6 @@ namespace RentCarStore.Finance.Data.Repositories
         }
 
         public Task<PriceList> GetByCarCaterory(CarCategory category)
-            => DbSet.FirstOrDefaultAsync(p => p.Category == category && p.Validity >= DateTime.Now);
+            => DbSet.FirstOrDefaultAsync(p => p.Category == category && p.Validity >= DateTime.Now && p.IsActive);
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface IInvoiceService
     {
-        Task Add(Invoice invoice);
+        Task Create(Invoice invoice);
         Task Cancel(Guid invoiceId);
     }
 }
