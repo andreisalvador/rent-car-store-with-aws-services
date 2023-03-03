@@ -1,0 +1,34 @@
+version: '3.1'
+
+services:  
+  postgresdb:
+    image: postgres:14.4-alpine
+    container_name: rent-car-store-postgresql
+    environment:
+      - POSTGRES_PASSWORD=pgpass
+      - POSTGRES_USER=andrei.salvador
+    ports:
+      - "5433:5432"
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: rent-car-store-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=andrei.salvador@teste.com
+      - PGADMIN_DEFAULT_PASSWORD=pgadminpass
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgresdb  
+
+  localstack:
+      image: localstack/localstack:latest
+      container_name: rent-car-store-localstack
+      environment: 
+        - AWS_DEFAULT_REGION=us-east-1
+        - EDGE_PORT=4566
+        - SERVICES=sns,sqs,s3
+      volumes:
+      - '../scripts/aws-local-environment.sh:/docker-entrypoint-initaws.d/aws-local-environment.sh' 
+      ports: 
+        - '4566-4583:4566-4583'
