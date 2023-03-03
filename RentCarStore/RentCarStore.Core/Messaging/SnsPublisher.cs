@@ -36,7 +36,8 @@ namespace RentCarStore.Core.Messaging
                 foreach (var item in messageAttributes)
                     request.MessageAttributes.Add(item);
 
-            return _sns.PublishAsync(topicArn, messageBody, cancellationToken);
+
+            return _sns.PublishAsync(request, cancellationToken);
         }
     }
 }
