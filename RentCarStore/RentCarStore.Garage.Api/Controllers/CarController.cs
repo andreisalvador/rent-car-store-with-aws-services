@@ -50,7 +50,9 @@ namespace RentCarStore.Garage.Api.Controllers
             var result = await _sqs.GetMessagesAsync(queueName);
 
             foreach (var message in result)
+            {
                 await _sqs.DeleteMessageAsync(queueName, message.ReceiptHandle);
+            }
 
             return Ok(result.Select(m => new { m.MessageId, m.Body }));
         }

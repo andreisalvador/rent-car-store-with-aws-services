@@ -1,8 +1,10 @@
 ﻿using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Logging;
+using RentCarStore.Core.Messaging.Helper;
 using RentCarStore.Core.Messaging.Interfaces;
 using System.Net;
+using System.Text.Json;
 
 namespace RentCarStore.Core.Messaging
 {
@@ -10,7 +12,8 @@ namespace RentCarStore.Core.Messaging
     {
         private readonly IAmazonSQS _sqs;
         private readonly ILogger<SqsConsumer> _logger;
-        private static readonly List<string> _attributeNames = new() { "All" };
+        private static readonly List<string> AttributeNamesRequired = new() { "All" };
+        private const string MessageAttributesField = "MessageAttributes";
 
         public SqsConsumer(IAmazonSQS sqs, ILogger<SqsConsumer> logger)
         {
@@ -27,7 +30,7 @@ namespace RentCarStore.Core.Messaging
                 ReceiveMessageRequest request = new()
                 {
                     QueueUrl = queueUrlResponse.QueueUrl,
-                    MessageAttributeNames = _attributeNames,
+                    MessageAttributeNames = AttributeNamesRequired,
                     MaxNumberOfMessages = 5
                 };
 
@@ -38,6 +41,18 @@ namespace RentCarStore.Core.Messaging
                     throw new AmazonSQSException($"Failed to GetMessagesAsync for queue {queueName}. Response: {receiveMessageResponse.HttpStatusCode}");
                 }
 
+                receiveMessageResponse.Messages.ForEach(message =>
+                {
+                    if (!message.MessageAttributes.Any() && message.Body.Contains(MessageAttributesField))
+                    {
+                        JsonDocument jsonBody = JsonDocument.Parse(message.Body);
+                        var messageAttributesFromBody = JsonSerializer.Deserialize<Dictionary<string, MessageAttribute>>(jsonBody.RootElement.GetProperty(MessageAttributesField))!;
+
+                        foreach(var attribute in messageAttributesFromBody)
+                            message.MessageAttributes.Add(attribute.Key, attribute.Value);
+                    }
+                });
+
                 return receiveMessageResponse.Messages;
             }
             catch (Exception ex)
@@ -46,7 +61,6 @@ namespace RentCarStore.Core.Messaging
                 throw;
             }
         }
-
 
         public async Task DeleteMessageAsync(string queueName, string receiptHandle, CancellationToken cancellationToken = default!)
         {
