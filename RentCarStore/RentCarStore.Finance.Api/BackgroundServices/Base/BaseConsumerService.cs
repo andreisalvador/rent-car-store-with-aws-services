@@ -1,6 +1,8 @@
 ﻿using Amazon.SQS.Model;
+using RentCarStore.Core.Messaging;
 using RentCarStore.Core.Messaging.Helper;
 using RentCarStore.Core.Messaging.Interfaces;
+using System.Text.Json;
 
 namespace RentCarStore.Finance.Api.BackgroundServices.Base
 {
@@ -44,5 +46,9 @@ namespace RentCarStore.Finance.Api.BackgroundServices.Base
                 await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
             }
         }
+
+        protected T DeserializeFromMessage<T>(Message message) where T : IMessage
+            => JsonSerializer.Deserialize<T>(message.Body)!;
+
     }
 }

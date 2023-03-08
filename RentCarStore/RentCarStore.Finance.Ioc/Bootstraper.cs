@@ -5,10 +5,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RentCarStore.Core.LocalStack;
 using RentCarStore.Core.Messaging.Extensions;
-using RentCarStore.Core.Notification.Handlers;
-using RentCarStore.Core.Notification.Notifiers.Interfaces;
-using RentCarStore.Core.Notification.Notifiers;
 using RentCarStore.Core.Notification;
+using RentCarStore.Core.Notification.Handlers;
+using RentCarStore.Core.Notification.Notifiers;
+using RentCarStore.Core.Notification.Notifiers.Interfaces;
+using RentCarStore.Finance.Application.Messaging.Contracts.Handlers;
+using RentCarStore.Finance.Application.Messaging.Contracts.Handlers.Interfaces;
+using RentCarStore.Finance.Application.Messaging.Garage.Handlers;
+using RentCarStore.Finance.Application.Messaging.Garage.Handlers.Interface;
+using RentCarStore.Finance.Application.Services;
+using RentCarStore.Finance.Application.Services.Interfaces;
 using RentCarStore.Finance.Data;
 using RentCarStore.Finance.Data.Repositories;
 using RentCarStore.Finance.Domain;
@@ -17,8 +23,6 @@ using RentCarStore.Finance.Domain.Services;
 using RentCarStore.Finance.Domain.Services.Interfaces;
 using RentCarStore.Finance.Domain.Validators;
 using System.Reflection;
-using RentCarStore.Finance.Application.Services.Interfaces;
-using RentCarStore.Finance.Application.Services;
 
 namespace RentCarStore.Finance.Ioc
 {
@@ -32,10 +36,17 @@ namespace RentCarStore.Finance.Ioc
             AddValidators(services);
             AddNotification(services);
             AddApplicationServices(services);
+            AddEventHandlers(services);
 
             services.AddMessaging();
             services.AddLocalStackAwsService(configuration);
             services.AddMediatR(startupAssembly);
+        }
+
+        private static void AddEventHandlers(IServiceCollection services)
+        {
+            services.AddScoped<IGarageEventHandler, GarageEventHandler>();
+            services.AddScoped<IContractsEventHandler, ContractsEventHandler>();
         }
 
         private static void AddApplicationServices(IServiceCollection services)
